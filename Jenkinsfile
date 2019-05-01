@@ -1,7 +1,7 @@
 node {
   stage("test") {
     checkout scm
-    def f = load 'funcs.groovy'
+    def f = load "${env.WORKSPACE}/funcs.groovy"
     f.x()
   }
 }
