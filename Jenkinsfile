@@ -1,5 +1,7 @@
 node {
   stage("test") {
+    checkout scm
+    load 'funcs.groovy'
     x()
   }
 }
