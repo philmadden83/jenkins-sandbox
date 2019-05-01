@@ -1,0 +1,25 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  namespace: infra
+spec:
+  imagePullSecrets:
+    - name: dockerhub
+  containers:
+    - name: maven
+      image: maven:3.5.4-jdk-9
+      command: ["tail", "-f", "/dev/null"]
+      imagePullPolicy: Always
+      env:
+        - name: "LC_ALL"
+          value: "en_US.UTF-8"
+        - name: "LANG"
+          value: "en_US.UTF-8"
+        - name: "TZ"
+          value: "America/Chicago"
+      resources:
+        requests:
+          memory: "10Gi"
+          cpu: "500m"
+        limits:
+          memory: "10Gi"
