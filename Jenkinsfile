@@ -1,8 +1,8 @@
 node {
   stage("test") {
     checkout scm
-    load 'funcs.groovy'
-    x()
+    def f = load 'funcs.groovy'
+    f.x()
   }
 }
 
