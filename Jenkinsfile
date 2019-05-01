@@ -1,4 +1,4 @@
-appPipeline(options: [ NODE_LABEL: 'phil-test'], parameters: []) {
+node {
   stage("test") {
     x()
   }
